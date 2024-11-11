@@ -1,0 +1,912 @@
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.header_box {
+    background-image: linear-gradient(#764BA2, #667EEA);
+}
+
+.hd_info-avatar i,
+.hd_info-avatar a {
+    color: white !important;
+}
+
+.hd_info-avatar .fa-user {
+    font-size: 18px;
+    border: 1px solid white;
+    padding: 7px 10px;
+    border-radius: 50%;
+}
+
+.hd_info {
+    position: relative;
+}
+
+.btn-link {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    background: white;
+    opacity: 0;
+    padding: 7px;
+    color: #000 !important;
+    transition: all ease-in-out 0.3s;
+    width: 121px;
+    box-shadow: 0 0 5px 5px #0000000f;
+}
+
+.hd_info:hover {
+    cursor: pointer;
+}
+
+.hd_info:hover .btn-link {
+    bottom: -59px;
+    opacity: 1;
+}
+
+.menu_left {
+    background: #242527;
+    height: 1000px;
+    padding-top: 30px;
+}
+
+.menu_left ul {
+    padding: 0;
+}
+
+.content_box {
+    background: rgb(241, 243, 246);
+    padding: 10px;
+}
+
+.col-2,
+.col-10 {
+    padding: 0 !important;
+}
+
+.cusor {
+    cursor: pointer;
+}
+
+.action {
+    position: relative;
+    padding-right: 7px;
+}
+
+.action:after {
+    content: "|";
+    right: 0;
+    position: absolute;
+}
+
+.cusor i {
+    font-size: 18px;
+}
+
+.menu_left li {
+    color: white;
+    cursor: pointer;
+    list-style: none;
+    padding: 7px 10px 7px 25px;
+}
+
+.menu_left li:hover {
+    background: black;
+}
+
+.menu_left li i {
+    margin-right: 5px;
+}
+
+.thongkeUser_boxRight,
+.thongkeUser_boxLeft,
+.box_thongke {
+    padding: 20px;
+}
+
+.thongkeUser_box {
+    background: white;
+}
+
+.thongkeUser_title1 {
+    text-transform: uppercase;
+    color: rgb(114, 99, 188);
+    font-weight: bold;
+    font-size: 14.5px;
+}
+
+.thongkeUser_title2 {
+    text-transform: uppercase;
+    color: rgb(247, 93, 129);
+    font-weight: bold;
+    font-size: 14.5px;
+}
+
+#content-request,
+.thongkeUser_title1_desc {
+    font-size: 12.5px;
+}
+
+#request_number3,
+#request_number4,
+#request_number1,
+#request_number2,
+#request_number {
+    font-size: 40px;
+}
+
+.icon_statis {
+    font-size: 30px;
+}
+
+.loc input {
+    height: 35px;
+    border: 1px solid #0000001c;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#viewchukyso {
+    z-index: 99999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000000ba;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.viewchukyso_content {
+    border: 5px solid #a99797;
+    border-radius: 7px;
+    padding: 25px;
+    width: 550px;
+    height: 219px;
+    word-wrap: break-word;
+    color: #000000;
+    background: white;
+}
+
+#viewchukyso.show {
+    display: flex;
+}
+
+#contentRequest {
+    max-height: 670px;
+    overflow-y: scroll;
+}
+
+.transaction {
+    display: none;
+}
+
+.transaction.show {
+    display: block;
+}
+
+.page-title-box .page-title {
+    display: inline-block;
+    font-size: 26px;
+}
+
+.fa-users {
+    font-size: 40px;
+}
+
+.fa-usersDb {
+    font-size: 16px;
+}
+
+.formRegister {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0a331330;
+}
+
+#formSelectform {
+    border: 1px solid #0000001f;
+    height: 31px;
+    width: 134px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.star {
+    color: red;
+    font-size: 14px;
+}
+
+.formErrorDepartment {
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+    margin: 0;
+}
+
+.form-group label {
+    margin: 0;
+}
+
+.click,
+#thongke,
+.departmentBlockUsers {
+    cursor: pointer;
+}
+
+.blue {
+    background: #28b510 !important;
+    cursor: pointer;
+}
+
+.red {
+    color: #fff !important;
+    background: #d40606 !important;
+    cursor: pointer;
+}
+
+.listGroupUser_li {
+    position: relative;
+}
+
+.listGroupUser_li>a {
+    display: inline-block;
+    width: 100%;
+    color: #fcf8e3 !important;
+    cursor: pointer;
+}
+
+.listGroupUser_li>i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transform: translateY(-50%);
+    color: #fcf8e3 !important;
+    cursor: pointer;
+}
+
+.box_contentListGroupUser>ul>.listGroupUser_li {
+    list-style: none;
+    padding: 7px;
+    background: #6c757d;
+}
+
+.box_contentListGroupUser-chil {
+    background: #fff;
+    padding: 10px;
+    display: none;
+}
+
+.listGroupUser_li-chil {
+    list-style: none;
+}
+
+.departmentRemoveUsers>i,
+.departmentEditUsers>i,
+.box_contentListGroupUser-chil>i {
+    cursor: pointer;
+}
+
+.table-responsive {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.box_check2,
+.box_check1,
+.box_check {
+    max-height: 600px;
+    width: 100%;
+    height: max-content;
+    overflow-y: scroll;
+    border: 1px solid #00000024;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+}
+
+.box_input-check {
+    margin-right: 7px;
+    width: 48%;
+    display: inline-block;
+}
+
+.box_check,
+.box_check1 {
+    height: 350px;
+}
+
+.btn-addNewGroup1 {
+    padding: 5px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+
+.group_box {
+    margin-right: 10px;
+}
+
+.group_box label {
+    margin-right: 10px;
+    padding: 0px 5px;
+    border: 1px solid #00000024;
+    border-radius: 5px;
+}
+
+.group_box-chil {
+    position: relative;
+}
+
+.group_box .removeGroup {
+    color: red;
+    position: absolute;
+    top: -7px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.box_check {
+    display: none;
+}
+
+#formStatus,
+#formRole {
+    padding: 4px 5px;
+    border: 1px solid #00000024;
+    border-radius: 5px;
+}
+
+.change_box,
+.box_groupAddUser3,
+.box_groupAddUser2,
+.box_groupAddUser {
+    position: fixed;
+    background: #000000c7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.change_box_content,
+.box_groupAddUserChildren3,
+.box_groupAddUserChildren2,
+.box_groupAddUserChildren {
+    width: 400px;
+    padding: 15px;
+    background: #fff;
+    border: 5px solid #d5cfcffc;
+    border-radius: 5px;
+}
+
+.contentNewGroup {
+    margin-top: 10px;
+}
+
+.change_box,
+.box_groupAddUser3,
+.box_groupAddUser2,
+.box_groupAddUser {
+    display: none;
+}
+
+.change_box.show,
+.box_groupAddUser3.show,
+.box_groupAddUser2.show,
+.box_groupAddUser.show {
+    display: flex;
+}
+
+#startdate,
+#enddate {
+    font-size: 14px;
+    padding: 0px 15px;
+    color: #6c757d;
+}
+
+.boxInfoUser-content {
+    padding: 10px;
+    border: 1px solid #00000024;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.title_label {
+    margin-right: 10px;
+}
+
+.title_h5 {
+    font-weight: bold;
+}
+
+.report {
+    display: none;
+}
+
+.report.show {
+    display: block;
+}
+
+.listDepartment i {
+    margin: 0px 1px !important;
+}
+
+.page-title-box_parent {
+    padding: 10px 10px;
+}
+
+.table thead th {
+    font-weight: bold;
+}
+
+.formRegisterDepartment {
+    padding: 15px;
+    border: 1px solid #98a6ad;
+    border-radius: 10px;
+
+}
+
+.baoCaoGtel,
+.baoCaoCompany,
+.baocao {
+    display: none;
+}
+
+.baoCaoGtel.show,
+.baoCaoCompany.show,
+.baocao.show {
+    display: block;
+}
+
+.baocao_link {
+    position: relative;
+}
+
+.baocao_link .fa-chevron-circle-right {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 26px;
+}
+
+.table_boxBaoCaoGroup {
+    max-height: 600px;
+    height: unset;
+    overflow-y: scroll;
+}
+
+#statusGroup {
+    border: 1px solid #00000024;
+    height: 32px;
+    width: 97px;
+    border-radius: 5px;
+}
+
+.box_imgeUser {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #0101011a;
+}
+
+.box_imgeUser i {
+    font-size: 186px;
+}
+
+#style-1::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    background-color: #6b7782e3;
+}
+
+.table-responsive.table-admin {
+    height: unset;
+    overflow: unset;
+}
+
+.card-body {
+    border: 1px #c8cbcf69 solid !important;
+    border-radius: 5px;
+}
+
+.an-phanquyen {
+    display: none !important;
+}
+
+#statusPartner {
+    width: 175px;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #00000029;
+    padding: 0px 7px;
+}
+
+.box-viewTransaction {
+    display: none;
+}
+
+.box-viewTransaction.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.viewTransactionChild {
+    border: 5px #ffffff solid;
+    padding: 15px;
+    color: #fff;
+    background-color: #ffff;
+    width: 850px;
+}
+
+.viewTransactionBottom,
+.viewTransactionTop {
+    overflow: scroll;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #1a1e24;
+}
+
+.link-info-topRight {
+    border: 1px #1b4770 solid;
+    padding: 7px 9px;
+    border-radius: 2px;
+}
+
+.info-right,
+.info-left {
+    border: 1px solid #04616530;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 4px 5px 1px #b3b1b1;
+}
+
+.apikey-box {
+    position: relative;
+    margin: 0px 20px;
+
+}
+
+.apikey-box>i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 11px;
+}
+
+.info-left-avatar>i {
+    font-size: 65px;
+}
+
+.quota-input {
+    height: 35px;
+    width: 100%;
+    padding: 0px 7px;
+    border: 1px solid #b9b8b863;
+    border-radius: 3px;
+}
+
+.apikey-box i {
+    cursor: pointer;
+}
+
+#parentPartner,
+.register-user-content input {
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
+    border: 1px solid #93919163;
+    border-radius: 5px;
+}
+
+.an {
+    display: none;
+}
+
+.sub-content-bodyContent input {
+    width: 87%;
+    height: 40px;
+    padding: 0px 10px;
+    border: 1px solid #0fd3a436;
+    border-radius: 5px;
+}
+
+.inputInfo {
+    width: 239px;
+    height: 32px;
+    padding: 0px 12px;
+    border: 1px solid #a9a9a95e;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.btn-color {
+    color: black;
+    border: 1px solid rgba(109, 109, 109, 0.42);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.form-control,
+.btn,
+#sidebar-menu>ul>li>a,
+#sidebar-menu .menu-title {
+    font-size: 15px;
+}
+
+.logo-lg img {
+    object-fit: scale-down;
+}
+
+.footerWeb {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.box-infoUser {
+    display: none;
+    box-shadow: 2px 5px 12px -2px #33333366;
+}
+
+.box-infoUser.hien {
+    display: block;
+}
+
+.notification-list .noti-title {
+    cursor: pointer;
+}
+
+.notification-list .noti-title:hover {
+    background-color: #00aff2;
+}
+
+.menuListNew,
+.menuListCategoryNew {
+    cursor: pointer;
+}
+
+.addProduct-content,
+.addProductCategory-content {
+    width: 100%;
+    border: 1px solid #7f7f7f63;
+    height: unset;
+    border-radius: 5px;
+}
+
+.product-input,
+.productCategory-input {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #6363636e;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 35px;
+}
+
+.product-form-group label,
+.productCategory-form-group label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    padding-left: 10px;
+}
+
+.product-form-group label.hien,
+.productCategory-form-group label.hien {
+    top: -30%;
+    opacity: 1;
+}
+
+.product-form-group,
+.productCategory-form-group {
+    padding: 0px 15px;
+    position: relative;
+}
+
+.product-form-group textarea,
+.productCategory-form-group textarea {
+    height: 91px;
+}
+
+.product-form-group select,
+.productCategory-form-group select {
+    width: 20%;
+}
+
+.content-productImg,
+.content-productCategoryImg {
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #7f7f7f63;
+}
+
+#imageInputAddProduct,
+#imageInput {
+    display: none;
+}
+
+#imagePreviewProduct,
+#imagePreview {
+    border: 1px solid #0b787259;
+    width: 100%;
+    height: 218px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#content-productImg-span img,
+#content-productCategoryImg-span img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+#content-productImg-span,
+#content-productCategoryImg-span {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#productListBody tr td,
+#tbodyProduct tr td,
+#tbodyCategoryProduct tr td {
+    text-align: center;
+    vertical-align: middle;
+    height: 80px;
+}
+
+#productListHead tr th,
+#theadProduct tr th,
+#theadCategoryProduct tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.editUserInfo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 19px;
+}
+
+.editUserInfo i {
+    font-size: 20px;
+}
+
+.productEdit-form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 59px 0px 23px;
+    position: relative;
+}
+
+.productEdit-form-group p,
+.productEdit-form-group label {
+    width: 24%;
+}
+
+.productEdit-form-group textarea {
+    height: 80px;
+}
+
+.product-input-unique {
+    color: red;
+}
+
+
+#modalViewHoadon{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.85);
+}
+#modalViewHoadon.active{
+    display: flex;
+}
+.modalViewHoadon-box{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    height: unset;
+    position: relative;
+}
+.modalViewHoadon-box-top-title{
+     border-bottom: 1px solid rgba(109, 109, 109, 0.42);
+}
+.info-line-title{
+    font-weight: bold;
+    width: 12%;
+}
+.info-line-content{
+    width: 87%;
+}
+.info-line{
+    padding: 5px 0px;
+}
+.detail-admin-product-img{
+    width: 60px;
+}
+.title{
+    font-weight: bold;
+}
+.close-detail-info-product{
+    font-size: 40px;
+    color: red;
+}
+.box-icon-close{
+    position: absolute;
+    top: -19px;
+    right: -14px;
+    cursor: pointer;
+}
+.icon-view-remove{
+    color: red;
+}
+.inputPage{
+    border-radius: 5px;
+    border: 1px solid #33333361;
+    width: 61px;
+}
+.box-find-hoadon{
+    margin-right: 15px;
+}
+.box-find-hoadon input,
+.box-find-hoadon select{
+    border: 1px solid #3333334d;
+    height: 40px;
+    padding: 0px 27px;
+    border-radius: 5px;
+}
+.btn-searchHoaDon{
+    padding: 15px 39px;
+    font-size: 17px;
+}
+.icon-view-detail{
+    font-size: 21px;
+}
+#dateTime{
+    margin-right: 10px;
+}
+.box-time-header{
+    height: 100%;
+    color: #fff;
+}

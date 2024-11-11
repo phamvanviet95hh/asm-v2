@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/web/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/font-awesome.css}">
+    <link rel="stylesheet" th:href="@{/web/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/owl.theme.default.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/app.css}">
+    <link rel="stylesheet" th:href="@{/web/css/giaodien.css}">
+    <link rel="stylesheet" th:href="@{/web/css/admin/adminLogin.css}">
+    <script th:src="@{/web/js/jquery.js}"></script>
+    <script th:src="@{/web/js/gloable.js}"></script>
+    <title>Admin</title>
+</head>
+<body>
+<div class="login_box">
+    <div class="imgLogin">
+        <img src="">
+    </div>
+    <div class="logo_gtel">
+        <img width="98" height="50" alt="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) "
+             title="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) " class=""
+             th:src="@{/web/imgs/logo-line-01.png}" />
+        <span>Admin-ASM</span>
+    </div>
+    <div class="box_content">
+        <h5>Login</h5>
+        <form action="" id="form-login">
+            <div class="content-item">
+                <label for="username">Tài khoản: </label>
+                <input type="text" id="username" placeholder="Nhập tài khoản..." name="username" class="item_input">
+            </div>
+            <div class="content-item">
+                <label for="password">Mật khẩu: </label>
+                <input type="password" id="password" placeholder="Nhập tài khoản..." name="password" class="item_input">
+            </div>
+            <div class="content-btn">
+                <button type="submit" class="btn btn-primary btn-login">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/web/js/app.js}"></script>
+<script th:src="@{/web/js/bootstrap.min.js}"></script>
+<script th:src="@{/web/js/admin/login.js}"></script>
+</body>
+</html>

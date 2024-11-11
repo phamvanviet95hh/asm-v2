@@ -1,0 +1,51 @@
+<h2 class="mb-3"><b>Danh sách hoá đơn:</b> </h2>
+<div class="table-listCategoryProduct">
+  <table class="table table-hover">
+    <thead class="thead-dark" id="productListHead">
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Mã hoá đơn</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Ảnh SP</th>
+      <th scope="col">Số lượng </th>
+      <th scope="col">Thành tiền</th>
+      <th scope="col">Trạng thái</th>
+      <th scope="col">Thời gian đặt </th>
+      <th scope="col">Hành động </th>
+    </tr>
+    </thead>
+    <tbody id="productListBody">
+    <tr th:each="hoadon, index : ${hoaDons}">
+      <td th:text="${index.index + 1}"></td>
+      <td th:text="${hoadon.getCodeBill()}"></td>
+      <td th:text="${hoadon.getNameProduct()}"></td>
+      <td>
+        <img width="100" height="66"
+             th:src="'data:image/png;base64,' + ${hoadon.getImgProduct()}" alt="">
+      </td>
+      <td th:text="${hoadon.getQtyBill()}"></td>
+      <td th:text="${hoadon.getTotalPriceBill()}"></td>
+      <td th:text="${hoadon.getStatusBill() == '1' ? 'Chờ thanh toán' : 'Đã thanh toán'}"></td>
+      <td th:text="${hoadon.getTimeCreatedAt()}"></td>
+      <td>
+        <a href="#" class="box-icon-view-detail" th:data-id="${hoadon.getIdBill()}">
+          <i class="fa fa-eye icon-view-detail" aria-hidden="true" title="Xem chi tiết"></i>
+        </a>
+        <a href="#" class="box-icon-remove-detail" th:data-id="${hoadon.getIdBill()}">
+          <i class="fa fa-trash icon-view-remove" aria-hidden="true"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div>
+  <a th:if="${hoaDons.hasPrevious()}" th:data-page="${hoaDons.number - 1}" th:data-size="${hoaDons.size}" class="prevPageTransaction">Previous</a>
+
+  <input th:value="${hoaDons.number + 1}" class="inputPage" th:maxlength="${hoaDons.totalPages}"> / <span th:text="${hoaDons.totalPages}">1</span>
+
+  <a th:if="${hoaDons.hasNext()}"
+     th:data-page="${hoaDons.number + 1}" th:data-size="${hoaDons.size}" class="nextPageTransaction">Next</a>
+</div>
+<script th:src="@{/web/js/admin/hoadons/listHoadon.js}"></script>

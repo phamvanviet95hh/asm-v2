@@ -1,0 +1,56 @@
+<div th:replace="mcv/header2.html :: html"></div>
+
+<div class="allbox-login">
+    <div class="container">
+        <div class="login-box">
+
+            <div class="login-box-body">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <div class="icon-login">
+                            <img th:src="@{/web/imgs/2341.png_860.png}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div class="d-flex justify-content-center align-items-center form-login-info-parent flex-column">
+                            <div class="login-box-title">
+                                <h3>Đăng nhập</h3>
+                            </div>
+                            <div class="form-login-info">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-12 mb-3 ">
+                                            <label for="form_username">Tên đăng nhập:</label>
+                                            <input type="text" class="form-control" id="form_username" placeholder="Tên đăng nhập">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="form_password">Mật khấu:</label>
+                                            <input type="password" class="form-control" id="form_password" placeholder="">
+                                        </div>
+                                        <div class="col-12 mb-3 d-flex align-items-center">
+                                            <div class="box-cart-body-checkbox">
+                                                <input type="checkbox" id="form_checkboxLogin" class="m-0 checkbox-cart">
+                                            </div>
+                                            <div>
+                                                <label class="label-cart">Ghi nhớ đăng nhập</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-danger btn-Login" style="margin-right: 15px;">Đăng nhập</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script th:src="@{/web/js/login/login.js}"></script>
+<div th:replace="mcv/footer.html :: div"></div>

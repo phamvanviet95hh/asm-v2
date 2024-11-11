@@ -1,0 +1,50 @@
+.d-nav{
+    width: 70%;
+}
+.box_login .smooth{
+    margin: 0;
+    font-size: 15px;
+}
+#main-menu {
+    display: flex;
+}
+.allbox-login{
+    background-color: #dbdbdb8a;
+}
+.icon-login img{
+    width: 100%;
+    object-fit: scale-down;
+}
+.form-login-info{
+    background-color: #fff;
+    border-radius: 7px;
+    width: 75%;
+    padding: 20px;
+}
+.form-login-info-parent{
+    height: 100%;
+}
+.login-box{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.btn-Login{
+    font-size: 14px;
+    padding: 6px 18px;
+}
+.login-box-title h3{
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+.box_login{
+    justify-content: center
+}
+.an{
+    display: none !important;
+}
+.menuListHoaDon{
+    cursor: pointer;
+}

@@ -1,0 +1,110 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <div class="mt-5">
+                <form id="productForm" enctype="multipart/form-data">
+                    <input type="hidden" id="productId" th:value="${product.getId()}">
+                    <div class="mb-3 content-categoryProduct-header d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-warning btn-backProduct"><i
+                                class="fa fa-chevron-circle-left" aria-hidden="true"></i> Về trang sản phẩm </button>
+                        <button type="button" class="btn btn-danger btn-removeProduct mb-3">Xoá sản phẩm</button>
+                    </div>
+                    <h2 class="mb-3">Sửa thông tin sản phẩm : <b th:text="${product.getProductName()}" id="ttSp"></b>
+                    </h2>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="content-productImg">
+                                <div
+                                    class="content-productImg-box d-flex flex-column align-items-center justify-content-center">
+                                    <div class="image-preview d-flex flex-column align-items-center justify-content-center"
+                                        id="imagePreviewProduct">
+                                        <span id="content-productImg-span">
+                                            <img th:src="'data:image/png;base64,' + ${product.getProductImage()}"
+                                                th:alt="${product.getProductName()}">
+                                        </span>
+                                    </div>
+                                    <div class="box_btn-uploadImg">
+                                        <input type="file" id="imageInputAddProduct" accept="image/*" name="file">
+                                        <button type="button" class="btn btn-info btn-selectImg mb-3">Chọn ảnh sản
+                                            phẩm</button>
+                                        <button type="button" class="btn btn-success btn-editImgProduct mb-3">Sửa
+                                            ảnh</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="addProduct-content">
+                                <div class="productEdit-form-group  mt-5 mb-5">
+                                    <label for="product-input-productName">Tên Sản Phẩm<span
+                                            class="product-input-unique">(*)</span>:</label>
+                                    <input type="text" placeholder="Nhập tên danh mục" maxlength="255"
+                                        autocomplete="off" class="product-input product-input-productName"
+                                        id="product-input-productName" th:value="${product.getProductName()}" readonly>
+                                    <a href="#" class="editUserInfo" data-name="Company's name" id="productNameInput"
+                                        data-key="productName"><i class="fa fa-pencil-square-o"
+                                            aria-hidden="true"></i></a>
+
+                                    <div class="error-product" id="form-error-register-productName">
+                                    </div>
+                                </div>
+                                <div class="productEdit-form-group mb-5">
+                                    <label for="product-input-productAlias">Alias<span
+                                            class="product-input-unique">(*)</span>:</label>
+                                    <input type="text" placeholder="Alias sản phẩm" maxlength="255" autocomplete="off"
+                                        th:value="${product.getLink()}" class="product-input product-input-productAlias"
+                                        id="product-input-productAlias" readonly>
+                                    <div class="error-product" id="form-error-register-productAlias">
+                                    </div>
+                                </div>
+                                <div class="productEdit-form-group mb-5">
+                                    <label for="">Mô tả sản phẩm :</label>
+                                    <textarea placeholder="Nhập mô tả" maxlength="255" autocomplete="off"
+                                        class="product-input product-input-productDescription"
+                                        id="product-input-productDescription"
+                                        th:text="${product.getProductDescription()}" readonly></textarea>
+                                    <a href="#" class="editUserInfo" data-name="Company's name"
+                                        id="productDescriptionInput" data-key="productDescription"><i
+                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <div class="error-product" id="form-error-register-productDescription"></div>
+                                </div>
+                                <div class="productEdit-form-group mt-5 mb-5">
+                                    <label for="product-input-productPrice">Giá sản phẩm<span
+                                        class="product-input-unique">(*)</span>:</label>
+                                    <input type="text" placeholder="Nhập tên giá sản phẩm" maxlength="255"
+                                        autocomplete="off" class="product-input productCategory-input-productPrice"
+                                        id="product-input-productPrice" th:value="${product.getProductPrice()}"
+                                        readonly>
+                                    <a href="#" class="editUserInfo" data-name="Company's name" id="productPriceInput"
+                                        data-key="productPrice"><i class="fa fa-pencil-square-o"
+                                            aria-hidden="true"></i></a>
+                                   
+                                    <div class="error-product" id="form-error-register-productPrice">
+                                    </div>
+                                </div>
+                                <div class="productEdit-form-group mb-5">
+                                    <p class="mb-3">Chọn danh mục:</p>
+                                    <select class="form-control" id="product-form-groupCategoryId" disabled>
+                                        <option value=""> ------>Chọn danh mục<------ </option>
+                                        <option th:each="item : ${listProductCategory}"
+                                            th:selected="${item.getId() == product.getProductCategory().getId()}"
+                                            th:value="${item.getId()}" th:text="${item.getNameCategory()}"></option>
+                                    </select>
+                                    <a href="#" class="editUserInfo" data-name="Company's name" id="productSelectInput"
+                                        data-key="productCategory"><i class="fa fa-pencil-square-o"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <script th:src="@{/web/js/admin/products/editProduct.js}"></script>
+</div>

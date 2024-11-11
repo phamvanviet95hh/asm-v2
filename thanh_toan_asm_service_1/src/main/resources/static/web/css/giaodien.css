@@ -1,0 +1,134 @@
+.owl-slide img{
+    width: 100%;
+    max-width: 100%;
+
+    border-radius: 10px;
+    object-fit: unset;
+}
+.owl-wrapper .owl-dots{
+    display: none;
+}
+.owl-wrapper .owl-nav{
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.owl-wrapper .owl-nav .owl-prev{
+    position: absolute;
+    left: -30px;
+}
+.owl-wrapper .owl-nav .owl-prev span,
+.owl-wrapper .owl-nav .owl-next span
+{
+    font-size: 50px;
+    background-color: rgb(0,0,0,0.4);
+    padding: 4px 20px;
+    color: #fff;
+    font-weight: 600;
+}
+.owl-wrapper .owl-nav .owl-next{
+    position: absolute;
+    right: -30px;
+
+}
+.ct-group .title-group{
+    color: #333;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.ct-group_duAnDaLam{
+    background-color: rgba(66, 66, 66, 0.1);
+    padding: 35px 0px;
+}
+.content_item1,
+.content_item{
+    display: flex;
+    margin-bottom: 15px;
+}
+.content_item img{
+    width: 65px;
+    height: 65px;
+    margin-right: 8px;
+    object-fit: unset;
+}
+.content_item1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: unset;
+}
+.ct-group_quytrinh{
+    padding-bottom: 35px;
+    background-color: #fff;
+    padding-top: 40px;
+}
+#section4{
+    padding: 0;
+}
+.giaiphap{
+    background-color: #fff;
+}
+.paddingtop{
+    padding: 85px 0px;
+}
+.title-group--gia{
+    margin-bottom: 10px !important;
+}
+.box_tintuc{
+    padding: 50px 0px;
+}
+.tintuc-title{
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+.news_item--img img{
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+}
+.news_item--contentDesc,
+.news_item--content{
+    margin-top: 15px;
+}
+
+.news_item--contentTitle{
+    font-weight: 600;
+}
+.news_item--contentDesc{
+    display: -webkit-box;
+    max-width: 100%;
+    height: 123px;
+
+
+    line-height: 1.5;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+.xemthem a{
+    font-size: 14px;
+    background-color: tomato;
+    border-radius: 5px;
+    padding: 7px 15px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+}
+.item_box-title{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+.item_box{
+    margin-left: 7px;
+}
+.vietFix{
+    background-color: tomato;
+}

@@ -1,0 +1,94 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="mt-5">
+                <div class="mb-3 content-categoryProduct-header d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-warning btn-backProductCategory"><i
+                            class="fa fa-chevron-circle-left" aria-hidden="true"></i> Về Danh mục
+                    </button>
+                    <button type="button" class="btn btn-danger btn-addProductCategoryDelete" th:data-id="${productCategory.getId()}">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        Xoá
+                    </button>
+                </div>
+                <h2 class="mb-3">Thêm danh mục sản phẩm</h2>
+                <input type="hidden" id="productCategoryId" th:value="${productCategory.getId()}">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="content-productCategoryImg">
+                            <div
+                                    class="content-productCategoryImg-box d-flex flex-column align-items-center justify-content-center">
+                                <div class="image-preview d-flex flex-column align-items-center justify-content-center"
+                                     id="imagePreview">
+                                        <span id="content-productCategoryImg-span">
+                                            <img th:src="'data:image/png;base64,' + ${productCategory.getImages()}" alt="">
+                                        </span>
+                                </div>
+                                <div class="box_btn-uploadImg">
+                                    <input type="file" id="imageInput" accept="image/*" name="file">
+                                    <button type="button" class="btn btn-info btn-selectImg mb-3">Chọn ảnh sản
+                                        phẩm
+                                    </button>
+                                    <button type="button" class="btn btn-success btn-editImgProduct mb-3">Sửa
+                                        ảnh</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="addProductCategory-content">
+                            <div class="productEdit-form-group mt-5 mb-5">
+                                <label for="productCategory-input-viewProductCategoryName">Tên danh mục<span
+                                        class="productCategory-input-unique">(*)</span>:</label>
+                                <input type="text" placeholder="Nhập tên danh mục" maxlength="255"
+                                       autocomplete="off"
+                                       class="productCategory-input productCategory-input-productCategoryName"
+                                       id="productCategory-input-viewProductCategoryName" th:value="${productCategory.getNameCategory()}" readonly>
+                                <a href="#" class="editUserInfo" data-name="Company's name" id="productCategoryNameInput"
+                                   data-key="nameCategory"><i class="fa fa-pencil-square-o"
+                                                             aria-hidden="true"></i></a>
+                                <div class="error-productCategory" id="form-error-register-viewProductCategoryName">
+                                </div>
+                            </div>
+                            <div class="productEdit-form-group mb-5">
+                                <label for="productCategory-input-viewProductCategoryAlias">Alias<span
+                                        class="productCategory-input-unique">(*)</span>:</label>
+                                <input type="text" placeholder="Nhập tài khoản" maxlength="255" autocomplete="off"
+                                       class="productCategory-input productCategory-input-productCategoryAlias"
+                                       id="productCategory-input-viewProductCategoryAlias" th:value="${productCategory.getAlias()}" readonly>
+
+                                <div class="error-productCategory" id="form-error-register-viewProductCategoryAlias">
+                                </div>
+                            </div>
+                            <div class="productEdit-form-group mb-5">
+                                <label for="">Mô tả sản phẩm :</label>
+                                    <textarea placeholder="Nhập mô tả" maxlength="255" autocomplete="off"
+                                              class="productCategory-input productCategory-input-productCategoryDescription"
+                                              id="productCategory-input-viewProductCategoryDescription" th:text="${productCategory.getDescription()}" readonly></textarea>
+                                <a href="#" class="editUserInfo" data-name="Company's name" id="productCategoryDescInput"
+                                   data-key="description"><i class="fa fa-pencil-square-o"
+                                                             aria-hidden="true"></i></a>
+                                <div class="error-productCategory"
+                                     id="form-error-register-viewProductCategoryDescription"></div>
+                            </div>
+                            <div class="productEdit-form-group mb-5">
+                                <p class="mb-3">Chọn danh mục cha:</p>
+                                <select class="form-control" id="productCategory-form-group" disabled>
+                                    <option value=""> ------>Chọn danh mục<------</option>
+                                    <option  th:each="item : ${listProductCategory}" th:value="${item.getId()}" th:if="${!(productCategory.getId() == item.getId())}" th:selected="${productCategory.getParentId() == item.getId()}"  th:text="${item.getNameCategory()}">
+                                           </option>
+                                </select>
+                                <a href="#" class="editUserInfo" data-name="Company's name" id="productCategorySlecInput"
+                                   data-key="parentId"><i class="fa fa-pencil-square-o"
+                                                             aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/web/js/admin/products/viewCategory.js}"></script>
+</div>

@@ -1,0 +1,13 @@
+package com.example.thanh_toan_asm.repositorys;
+
+import com.example.thanh_toan_asm.entitys.Districts;
+import com.example.thanh_toan_asm.entitys.Provinces;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface DistrictRepository extends JpaRepository<Districts, String> {
+    List<Districts> findByProvinces(Provinces provinces);
+}

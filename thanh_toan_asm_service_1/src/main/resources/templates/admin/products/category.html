@@ -1,0 +1,49 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="mt-5">
+                <div class="mb-3 content-categoryProduct-header d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-warning"><i class="fa fa-chevron-circle-left"
+                            aria-hidden="true"></i> Về trang chủ </button>
+                    <button type="button" class="btn btn-success btn-addProductCategory"><i class="fa fa-plus"
+                            aria-hidden="true"></i> Thêm danh mục mới</button>
+                </div>
+                <div class="mb-3 content-categoryProduct-body">
+                    <h2 class="mb-3"><b>Danh mục sản phẩm:</b> </h2>
+                    <div class="table-listCategoryProduct">
+                        <table class="table table-hover">
+                            <thead class="thead-dark" id="theadCategoryProduct">
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Ảnh đại diện</th>
+                                    <th scope="col">Tên danh mục</th>
+                                    <th scope="col">Thời gian khởi tạo</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyCategoryProduct">
+                                <tr th:each="product : ${listCategoryProduct}">
+                                    <td  th:text="${product.getId()}"></td>
+                                    <td>
+                                        <img width="100" height="66"
+                                            th:src="'data:image/png;base64,' + ${product.getImages()}" alt="">
+                                    </td>
+                                    <td th:text="${product.getNameCategory()}"></td>
+                                    <td th:text="${product.getCreateAt()}"></td>
+                                    <td>
+                                        <a href="#" class="viewProductCategory" th:data-id="${product.getId()}">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/web/js/admin/products/productCategory.js}"></script>
+</div>

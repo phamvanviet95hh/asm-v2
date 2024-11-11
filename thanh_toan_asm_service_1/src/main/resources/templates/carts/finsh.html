@@ -1,0 +1,10 @@
+<div th:replace="mcv/header2.html :: html"></div>
+
+<div class="mt-5 mb-5 d-flex flex-column align-items-center justify-content-center">
+    <h2>Đặt hàng thành công</h2>
+    <div class="d-flex">
+        <span>Đơn hàng sẽ được gửi đến địa chỉ bạn đã đăng ký : </span><i th:text="${address}"> </i></p>
+    </div>
+    <a href="/index" class="btn btn-warning back-home mt-3">Trở lại trang chủ</a>
+</div>
+<div th:replace="mcv/footer.html :: div"></div>

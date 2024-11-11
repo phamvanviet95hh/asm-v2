@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/web/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/font-awesome.css}">
+    <link rel="stylesheet" th:href="@{/web/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/owl.theme.default.min.css}">
+    <link rel="stylesheet" th:href="@{/web/css/style.css}">
+    <link rel="stylesheet" th:href="@{/web/css/app.css}">
+    <link rel="stylesheet" th:href="@{/web/css/giaodien.css}">
+    <link rel="stylesheet" th:href="@{/web/css/index.css}">
+    <script th:src="@{/web/js/jquery.js}"></script>
+    <script th:src="@{/web/js/gloable.js}"></script>
+    <title>Trung tâm dịch vụ chuyển đổi số - Chi nhánh Tổng công ty công nghệ - viễn thông toàn cầu</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class=" " style="padding: 5px 0px;" id="header">
+            <div class="container">
+                <div class="wrap-hd">
+                    <a class="logo" href="/index" title="">
+                        <img alt="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) "
+                            title="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) " class=""
+                            th:src="@{/web/imgs/logo_cds.png}" />
+                    </a>
+                    <nav class="d-flex align-items-center justify-content-end">
+                        <ul id="main-menu">
+                            <li>
+                                <a class="smooth" data-id="#section1" title="Về GSAFE">Về ASM</a>
+                            </li>
+                            <li>
+                                <a class="smooth" data-id="#section2" title="Sản phẩm">Sản phẩm</a>
+                            </li>
+                            <li>
+                                <a class="smooth" data-id="#section3" title="Dịch vụ">Dịch vụ</a>
+                            </li>
+                            <li>
+                                <a class="smooth" data-id="#section5" title="Tin tức">Tin tức</a>
+                            </li>
+
+
+                        </ul>
+                        <!-- <div id="box_login" class="d-flex  box_login align-items-center tablet">
+                            <a class="smooth" style="margin: 0; padding: 0" title="Đăng ký" href="/web/register">Đăng
+                                ký</a>
+                            <span>/</span>
+                            <a class="smooth btn-login" href="/web/login" style="margin: 0; padding: 0"
+                                title="Đăng đăng nhập">Đăng
+                                nhập</a>
+                        </div> -->
+
+                        <div class="box-header-cart">
+                            <i class="fa fa-shopping-cart link-cart" aria-hidden="true"></i>
+                            <span id="qty-cart"></span>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="mobi-nav">
+                <div class="close-nav-mobi"><i class="fa fa-bars fa-times-circle-o-nav open-nav-mb"
+                        aria-hidden="true"></i></div>
+                <div class="nav-mobi-box d-flex flex-column">
+                    <ul id="main-menu-mb">
+                        <li>
+                            <a class="smooth" data-id="#section1" title="Về GSAFE">Về ASM</a>
+                        </li>
+                        <li>
+                            <a class="smooth" data-id="#section2" title="Sản Phẩm">Sản Phẩm</a>
+                        </li>
+                        <li>
+                            <a class="smooth" data-id="#section3" title="Bảng giá">Dịch vụ</a>
+                        </li>
+                        <li>
+                            <a class="smooth" data-id="#section5" title="Tin tức">Tin tức</a>
+                        </li>
+
+
+                    </ul>
+                    <!-- <div id="box_login-phone" class="d-flex  box_login align-items-center phone"
+                        style="margin-left: 13px;">
+                        <a class="smooth" style="margin: 0; padding: 0" title="Đăng ký" href="/web/register">Đăng ký</a>
+                        <span>/</span>
+                        <a class="smooth btn-login" href="/web/login" style="margin: 0; padding: 0"
+                            title="Đăng đăng nhập">Đăng
+                            nhập</a>
+                    </div> -->
+
+                </div>
+            </div>
+        </header>
+        <script>
+            let checkGH = 0;
+            let checkCart = 0;
+            let cartItemss = document.getElementById('qty-cart');
+
+            console.log("cart2 trước:" + checkCart)
+            console.log("cart2 trước:" + checkGH)
+            if (localStorage.getItem('cart') !== null || checkCart != 0) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+                checkGH += totalQuantity;
+                checkCart += totalQuantity
+                cartItemss.innerHTML = totalQuantity;
+                console.log("totalQuantity:" + totalQuantity)
+            } else {
+                cartItemss.innerHTML = 0;
+            }
+            console.log("cart1 :" + localStorage.getItem('cart'));
+            $(".link-cart").click(function () {
+                window.location.href = `${localdomain}/web/cart`;
+            })
+        </script>
+    </div>

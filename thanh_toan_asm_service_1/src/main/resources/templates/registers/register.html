@@ -1,0 +1,88 @@
+<div th:replace="mcv/header2.html :: html"></div>
+
+<div class="container" >
+    
+    <div class="register-box pb-4 pt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="register-box-header d-flex flex-column justify-content-center align-items-center mb-5">
+                    <div class="register-box-header-img">
+                        <img th:src="@{/web/imgs/logo-line-01.png}" alt="">
+                    </div>
+                    <b> Đăng ký tài khoản mới:  </b>
+                </div>
+                <div id="thongbao" class="d-flex flex-column align-items-center">
+                    
+                </div>
+                <div class="register-box-content">
+                    <div class="register-form-group mb-5">
+                        <input type="text" placeholder="Nhập họ và tên" maxlength="255" autocomplete="off" class="register-input register-input-fullName" id="register-input-fullName">
+                        <label  for="register-input-fullName">Họ và tên<span class="register-input-unique">(*)</span>:</label>
+                        <div class="error-register" id="form-error-register-fullName"></div>
+                    </div>
+                    <div class="register-form-group mb-5">
+                        <input type="text" placeholder="Nhập tài khoản" maxlength="255" autocomplete="off" class="register-input register-input-userName" id="register-input-userName">
+                        <label for="register-input-userName">Tài khoản<span class="register-input-unique">(*)</span>:</label>
+                        <div class="error-register" id="form-error-register-userName"></div>
+                    </div>
+                    <div class="register-form-group mb-5">
+                        <input type="password" placeholder="Nhập mật khẩu" maxlength="255" autocomplete="off" class="register-input register-input-password" id="register-input-password">
+                        <label for="register-input-password">Mật khẩu <span class="register-input-unique">(*)</span>:</label>
+                        <div class="error-register" id="form-error-register-password"></div>
+                    </div>
+                    <div class="register-form-group mb-5">
+                        <input type="password" placeholder="Nhập lại mật khẩu" maxlength="255" autocomplete="off" class="register-input register-input-rePassword" id="register-input-rePassword">
+                        <label for="register-input-rePassword">Nhập lại mật khẩu<span class="register-input-unique">(*)</span>:</label>
+                        <div class="error-register" id="form-error-register-rePassword"></div>
+                    </div>
+                    <div class="register-form-group mb-5">
+                        <input type="text" placeholder="Nhập số điện thoại" maxlength="255" autocomplete="off" class="register-input register-input-phone" id="register-input-phone">
+                        <label for="register-input-phone">Số điện thoại<span class="register-input-unique">(*)</span>:</label>
+                        <div class="error-register" id="form-error-register-phone"></div>
+                    </div>
+                    <div class="register-form-group mb-5">
+                        <input type="email" placeholder="Nhập email" maxlength="255" autocomplete="off" class="register-input register-input-email" id="register-input-email">
+                        <label for="register-input-email">Email:</label>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 mb-3">
+                            <span>Địa chỉ<span class="register-input-unique">(*)</span>:</span>
+                        </div>
+                        <div class="col-6 mb-3 form-select-tt">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <select class="form-select" aria-label="Default select example" id="form_tinh-register">
+                                <option value=""  selected>Chọn tỉnh thành</option>
+                                <option th:each="item : ${listProvince}" th:text="${item.getFullName()}" th:data-code="${item.getCode()}"></option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3 ps-0 form-select-tt">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <select class="form-select" aria-label="Default select example" id="form_quan-register">
+                                <option value=""  selected>Chọn Quận/Huyện</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3 form-select-tt">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <select class="form-select" aria-label="Default select example" id="form_xa-register">
+                                <option value=""  selected>Chọn Phường/ Xã</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3 ps-0">
+                            <input type="text" class="form-control" id="form_duong-register" placeholder="Số nhà, tên đường">
+                        </div>
+                        <div class="col-12">
+                            <div class="error-register" id="form-error-register-address"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-5 d-flex align-items-center justify-content-start">
+                    <button type="button" class="btn btn-warning btn-register btn-registerSend">Đăng ký</button>
+                    <button type="button" class="btn btn-danger btn-register btn-backToHome" style="margin-right: 15px;">Trở lại</button>
+                </div>
+            </div>
+            <div class="col-12"></div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/web/js/registers/register.js}"></script>
+<div th:replace="mcv/footer.html :: div"></div>

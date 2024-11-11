@@ -1,0 +1,81 @@
+<div class="modalViewHoadon-box">
+    <div class="box-icon-close">
+        <i class="fa fa-times-circle close-detail-info-product" aria-hidden="true"></i>
+    </div>
+    <div class="modalViewHoadon-box-top mb-3">
+        <h3 class="modalViewHoadon-box-top-title pb-3 mb-3">Chi tiết đơn hàng: </h3>
+    </div>
+    <div class="modalViewHoadon-box-mid mb-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="box-info-product-hoadon">
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Mã đơn hàng: </span>
+                        <span class="info-line-content" id="codeBill" th:text="${adminCustomHoaDonDetailDto.getCodeBill()}"></span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Tên người đặt: </span>
+                        <span class="info-line-content" id="persionBill" th:text="${adminCustomHoaDonDetailDto.getNamePersionBill()}">Phạm Văn Việt</span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Số điện thoại: </span>
+                        <span class="info-line-content" id="phoneBill" th:text="${adminCustomHoaDonDetailDto.getPhoneBill()}"></span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Địa chỉ: </span>
+                        <span class="info-line-content" id="emailBill" th:text="${adminCustomHoaDonDetailDto.getAddressBill()}"></span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Thời gian khởi tạo: </span>
+                        <span class="info-line-content" id="timeBill" th:text="${adminCustomHoaDonDetailDto.getTimeCreatedAt()}"></span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Thông tin thêm: </span>
+                        <span class="info-line-content" id="detailBill" th:text="${adminCustomHoaDonDetailDto.getNoteBill()}"></span>
+                    </div>
+                    <div class="info-line d-flex justify-content-between align-items-center">
+                        <span class="info-line-title">Trạng thái: </span>
+                        <span class="info-line-content" id="statusBill">
+                            <button class="btn btn-warning" th:if="${adminCustomHoaDonDetailDto.getStatusBill() != '2'}" th:value-data="${adminCustomHoaDonDetailDto.getStatusBill()}">Chờ thanh toán</button>
+                            <button class="btn btn-success" th:if="${adminCustomHoaDonDetailDto.getStatusBill() == '2'}">Đã thanh toán</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="box-content-product-hoadon">
+                    <table class="table">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>STT</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="product, info : ${hoaDons}">
+                                <td th:text="${info.index + 1}"></td>
+                                <td>
+                                    <img th:src="'data:image/png;base64,'+ ${product.getImgProduct()}" alt="" class="detail-admin-product-img">
+                                </td>
+                                <td th:text="${product.getNameProduct()}"></td>
+                                <td th:text="${product.getQtyBill()}"></td>
+                                <td th:text="${#numbers.formatDecimal(product.getTotalPriceBill(), 0, 'COMMA', 0, 'COMMA')} + ' VND'"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="title">Tổng tiền:</td>
+                                <td class="title" th:text="${#numbers.formatDecimal(totalMoney, 0, 'COMMA', 0, 'COMMA')} + ' VND'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modalViewHoadon-box-bottom mb-3">
+
+    </div>
+</div>
+<script th:src="@{/web/js/admin/hoadons/detailHoadon.js}"></script>

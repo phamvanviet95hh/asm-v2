@@ -1,0 +1,205 @@
+<div th:replace="mcv/header2.html :: html"></div>
+<div class="container">
+    <div class="box-cart" id="container-box-cart">
+        <div class="box-cart-top mb-3" id="box-cart-top">
+            <table class="table-carts">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá sản phẩm</th>
+                    </tr>
+                </thead>
+                <tbody class="table-carts-tbody" id="table-carts-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div class="box-cart-body mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-7">
+                    <div class="box-cart-body-left">
+                        <h3 class="box-cart-body-left-title mb-3">Thông tin khách hàng</h3>
+                        <form action="">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="form_hovaten" placeholder="Họ và tên*">
+                                <p class="formErrorCart" id="fullNameError"></p>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="form_phone" placeholder="Số điện thoại*"
+                                    maxlength="11" minlength="9">
+                                <p class="formErrorCart" id="phoneNumberError"></p>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <input type="text" class="form-control" id="form_address1"
+                                    placeholder="Cơ sở lưu trú*">
+                                <p class="formErrorCart" id="formAddress1Error"></p>
+                            </div> -->
+                            <!-- <div class="mb-3">
+                                <input type="text" class="form-control" id="form_address2" placeholder="Địa chỉ*">
+                                <p class="formErrorCart" id="formAddress2Error"></p>
+                            </div> -->
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="form_email" placeholder="Email">
+                            </div>
+                            <div class="mb-3 box-send-bill">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="form_mst" placeholder="Nhập mã số thuế">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="form_addressBill"
+                                        placeholder="Nhập địa chỉ nhận hoá đơn">
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <input type="text" class="form-control" id="form_nameHĐo"
+                                        placeholder="Nhập tên công ty...">
+                                </div> -->
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-5">
+                    <div class="box-cart-body-right">
+                        <h3 class="box-cart-body-right-title mb-3">Thông tin nhận hàng</h3>
+                        <div class="row">
+                            <div class="col-6 mb-3 form-select-tt">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <select class="form-select" aria-label="Default select example" id="form_tinh">
+                                    <option value="" selected>Chọn tỉnh thành</option>
+                                    <option th:each="item : ${listProvince}" th:text="${item.getFullName()}"
+                                        th:data-code="${item.getCode()}"></option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-3 ps-0 form-select-tt">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <select class="form-select" aria-label="Default select example" id="form_quan">
+                                    <option value="" selected>Chọn Quận/Huyện</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-3 form-select-tt">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <select class="form-select" aria-label="Default select example" id="form_xa">
+                                    <option value="" selected>Chọn Phường/ Xã</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-3 ps-0">
+                                <input type="text" class="form-control" id="form_duong"
+                                    placeholder="Số nhà, tên đường">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Ghi chú khác (nếu có)"
+                                        id="floatingTextarea2" style="height: 100px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="formErrorCart" id="formDiaChiNhan"></p>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-start flex-column">
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="box-cart-body-checkbox">
+                            <input type="checkbox" id="formCheckBill" class="m-0 checkbox-cart">
+                        </div>
+                        <div>
+                            <label class="label-cart">Chọn nếu bạn muốn nhận hoá đơn</label>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="box-cart-body-checkbox">
+                            <input type="checkbox" id="formCheckvb" class="m-0 checkbox-cart">
+                        </div>
+                        <div>
+                            <label class="label-cart">Tôi đã đọc và đồng ý với <a href="#">Điều khoản & Chính
+                                    sách</a> của Gtel CDS</label>
+                        </div>
+                    </div>
+                    <div class="mb-5 d-flex align-items-center justify-content-start">
+                        <button type="button" class="btn btn-danger btn-cart btn-cart-add"
+                            style="margin-right: 15px;">Mua thêm</button>
+                        <button type="button" class="btn btn-warning btn-cart btn-orderBill">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadTT" class="loadTT">
+        <div class="box-loadTT">
+
+            <i class="fa fa-times-circle-o close-from-gtelPay-tt" aria-hidden="true"></i>
+            <table class="box-loadTT-table">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            Thông tin đơn hàng
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="box-loadTT-table-body">
+                    <tr>
+                        <td>Giá in đơn hàng</td>
+                        <td id="totalMoneyBill">2.750.000</td>
+                        <td>Mã giao dịch</td>
+                        <td id="codeBill">2024_11DL123</td>
+                    </tr>
+                    <tr>
+                        <td>Số tiền cần thanh toán</td>
+                        <td id="totalMoneyBill1">2.750.000</td>
+                        <td> Nội dung</td>
+                        <td id="codeBill1">Thanh toán đơn hàng 2024_11DL123</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <h3 class="gtelPay-title">Phương thức thanh toán</h3>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item hien" role="presentation">
+                                    <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-item="item1"
+                                        type="button" role="tab" aria-controls="home" aria-selected="true">Đơn vị thu
+                                        hộ</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-item="item2"
+                                        type="button" role="tab" aria-controls="profile" aria-selected="false">Tài khoản
+                                        ngân hàng</button>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="item1 show" id="item1">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <div
+                                                class="qr_box d-flex justify-content-center align-items-center flex-column">
+                                                <img alt="QR thanh toán " title="QR thanh toán " class="" id="img_qr"
+                                                    th:src="@{/web/imgs/qr_code.jpg}" />
+                                                <h1 class="mt-4">
+                                                    <p>Hiệu lực của mã:</p>
+                                                    <span id="timer">
+                                                        <span class="fontCountDown">05</span> : <span
+                                                            class="fontCountDown">00</span>
+                                                    </span>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div id="thongBaoTT"
+                                                class="d-flex flex-column justify-content-center align-items-center">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item2" id="item2" role="">...</div>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/web/js/cart.js}"></script>
+<div th:replace="mcv/footer.html :: div"></div>

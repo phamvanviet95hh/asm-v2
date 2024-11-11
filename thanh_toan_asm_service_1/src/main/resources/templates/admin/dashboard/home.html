@@ -1,0 +1,98 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div>
+    <div class="left-side-menu">
+        <div class="slimscroll-menu">
+
+            <!-- LOGO -->
+            <a href="#" class="logo text-center mb-4">
+                <span class="logo-lg">
+                    <img width="120" height="50" alt="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) "
+                        title="Tổng công ty Công nghệ - Viễn thông Toàn Cầu (Gtel) " class=""
+                        th:src="@{/web/imgs/logo_cds.png}" />
+                </span>
+
+            </a>
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+
+                <ul class="metismenu" id="side-menu">
+
+                    <li class="menu-title">Navigation</li>
+
+                    <li class="dashboard">
+                        <a id="dashboard">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
+                            <span class="badge badge-success float-right">01</span>
+                            <span> Dashboard </span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="listMenu_link click">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
+                            <span> Quản lý Menu </span>
+                        </a>
+                    </li>
+                    <li class="menuListCategoryProduct">
+                        <a class="click" id="menuListCategoryProduct">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            <span>Danh mục Sản phẩm </span>
+                        </a>
+
+                    </li>
+                    <li class="menuListProduct">
+                        <a class="click" id="menuListProduct">
+                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            <span>Danh sách Sản phẩm </span>
+                        </a>
+
+                    </li>
+                    <li class="menuListHoaDon">
+                        <a class="menuListHoaDonLink">
+                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                            <span> Quản lý hoá đơn</span>
+                        </a>
+                    </li>
+                    <li class="menuListNew">
+                        <a class="menulistNewLink">
+                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                            <span>Danh sách Tin Tức </span>
+
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+            <!-- End Sidebar -->
+
+            <div class="clearfix"></div>
+
+        </div>
+
+
+    </div>
+    <div style="position: fixed; z-index: 99999999999999999999999999; right: 10px; top: 75px">
+        <div class="alert alert-success alert-dismissible fade" role="alert" id="myAlert" style="display: none;">
+            <b id="contentAlert"></b>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade" role="alert" id="myAlertError"
+            style="display: none;">
+            <b id="contentAlertError"></b>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+
+    <div id="content_box">
+
+
+    </div>
+    <script th:src="@{/web/js/admin/home.js}"></script>
+</div>

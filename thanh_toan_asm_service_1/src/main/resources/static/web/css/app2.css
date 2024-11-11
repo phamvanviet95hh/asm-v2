@@ -1,0 +1,130 @@
+header{
+    background-color: brown;
+
+}
+.box-loadTT-table thead tr th,
+.box-cart-top table thead tr th{
+    border-right: 1px solid #fff;
+    padding: 9px 20px;
+    background-color: #A91F36;
+    color: #fff;
+    width: 17%;
+    text-align: center;
+}
+.box-cart{
+    margin-top: 126px;
+}
+table{
+    width: 100%;
+}
+
+.box-cart-top table thead tr th:first-child{
+    width: 60%;
+    text-align: left;
+}
+.content-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-item-info{
+    width: 84%;
+}
+.content-item-info .content-item-info-title{
+    margin: 0;
+}
+.content-item-info i,
+.content-item-info .content-item-info-price{
+    color: #A91F36;
+}
+.content-item-info .content-item-info-close{
+    display: block;
+}
+.box-loadTT-table-body tr td,
+.table-carts-tbody tr td{
+    padding: 10px 7px;
+    border-left: 1px solid #ababab69;
+}
+.box-loadTT-table-body tr td:last-child,
+.table-carts-tbody tr td:last-child{
+    border-right: 1px solid #ababab69;
+}
+.box-loadTT-table-body tr,
+.table-carts-tbody tr {
+    border-bottom: 1px solid #ababab69;
+}
+.content-item .content-item-box-img{
+    max-width: 15%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border: 1px solid #79797934;
+}
+.content-item .content-item-box-img .content-item-img{
+    width: 100%;
+    object-fit: scale-down;
+}
+.content-item .box-icon-up,
+.content-item .box-icon-down{
+    text-align: center;
+
+    width: 15%;
+}
+.content-item .box-input{
+    width: 60%;
+}
+.content-item .box-input input{
+    width: 100%;
+    text-align: center;
+}
+
+.content-item .box-icon-up i,
+.content-item .box-icon-down i{
+    border: 1px solid #9c9c9c7c;
+    border-radius: 50%;
+    padding: 7px 11px;
+    cursor: pointer;
+}
+.content-item-price{
+    text-align: center;
+}
+.table-box-total-price{
+    text-align: center;
+}
+.table-box-total-price .title-total-price,
+.table-box-total-price label{
+    color: #A91F36;
+}
+.checkbox-cart{
+    height: 17px;
+    width: 17px;
+}
+.label-cart{
+    font-size: 14px;
+}
+.label-cart a{
+    color: rgb(91 143 225);
+    font-size: 16px;
+}
+.box-cart-body-checkbox{
+    margin-right: 7px;
+}
+.btn-cart{
+    font-size: 21px;
+    padding: 11px 66px;
+}
+.ps-0{
+    padding-left: 0px !important;
+}
+.form-control{
+    font-size: 15px;
+    height: 43px;
+}
+.box-cart-body-right-title,
+.box-cart-body-left-title{
+    color: #25418C;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 23px;
+}

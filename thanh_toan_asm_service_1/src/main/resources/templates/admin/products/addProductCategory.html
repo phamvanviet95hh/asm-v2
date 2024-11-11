@@ -1,0 +1,82 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <div class="mt-5">
+                <form id="productCategoryForm" enctype="multipart/form-data">
+                    <div class="mb-3 content-categoryProduct-header d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-warning btn-backProductCategory"><i
+                                class="fa fa-chevron-circle-left" aria-hidden="true"></i> Về Danh mục </button>
+                        <button type="button" class="btn btn-success btn-addProductCategorySubmit"><i
+                                class="fa fa-floppy-o" aria-hidden="true"></i> Lưu</button>
+                    </div>
+                    <h2 class="mb-3">Thêm danh mục sản phẩm</h2>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="content-productCategoryImg">
+                                <div
+                                    class="content-productCategoryImg-box d-flex flex-column align-items-center justify-content-center">
+                                    <div class="image-preview d-flex flex-column align-items-center justify-content-center"
+                                        id="imagePreview">
+                                        <span id="content-productCategoryImg-span">
+
+                                        </span>
+                                    </div>
+                                    <div class="box_btn-uploadImg">
+                                        <input type="file" id="imageInput" accept="image/*" name="file">
+                                        <button type="button" class="btn btn-info btn-selectImg">Chọn ảnh sản
+                                            phẩm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="addProductCategory-content">
+                                <div class="productCategory-form-group mt-5 mb-5">
+                                    <input type="text" placeholder="Nhập tên danh mục" maxlength="255"
+                                        autocomplete="off"
+                                        class="productCategory-input productCategory-input-productCategoryName"
+                                        id="productCategory-input-productCategoryName">
+                                    <label for="productCategory-input-productCategoryName">Tên danh mục<span
+                                            class="productCategory-input-unique">(*)</span>:</label>
+                                    <div class="error-productCategory" id="form-error-register-productCategoryName">
+                                    </div>
+                                </div>
+                                <div class="productCategory-form-group mb-5">
+                                    <input type="text" placeholder="Nhập tài khoản" maxlength="255" autocomplete="off"
+                                        class="productCategory-input productCategory-input-productCategoryAlias"
+                                        id="productCategory-input-productCategoryAlias" readonly>
+                                    <label for="productCategory-input-productCategoryAlias">alias<span
+                                            class="productCategory-input-unique">(*)</span>:</label>
+                                    <div class="error-productCategory" id="form-error-register-productCategoryAlias">
+                                    </div>
+                                </div>
+                                <div class="productCategory-form-group mb-5">
+                                    <textarea placeholder="Nhập mô tả" maxlength="255" autocomplete="off"
+                                        class="productCategory-input productCategory-input-productCategoryDescription"
+                                        id="productCategory-input-productCategoryDescription"></textarea>
+                                    <div class="error-productCategory"
+                                        id="form-error-register-productCategoryDescription"></div>
+                                </div>
+                                <div class="productCategory-form-group mb-5">
+                                    <p class="mb-3">Chọn danh mục cha:</p>
+                                    <select class="form-control" id="productCategory-form-group">
+                                        <option value=""> ------>Chọn danh mục<------ </option>
+                                        <option th:each="item : ${listCategoryProduct}" th:value="${item.getId()}"
+                                            th:text="${item.getNameCategory()}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+    <script th:src="@{/web/js/admin/products/productCategory.js}"></script>
+    <script th:src="@{/web/js/admin/products/addProductCategory.js}"></script>
+</div>

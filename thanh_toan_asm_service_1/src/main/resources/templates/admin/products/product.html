@@ -1,0 +1,58 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="mt-5">
+                <div class="mb-3 content-categoryProduct-header d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-warning btn-backHome"><i class="fa fa-chevron-circle-left"
+                            aria-hidden="true"></i> Về trang chủ </button>
+                    <button type="button" class="btn btn-success btn-addProduct"><i class="fa fa-plus"
+                            aria-hidden="true"></i> Thêm sản phẩm mới</button>
+                </div>
+                <div class="mb-3 content-categoryProduct-body">
+                    <h2 class="mb-3"><b>Danh sách sản phẩm:</b> </h2>
+                    <div class="table-listCategoryProduct">
+                        <table class="table table-hover">
+                            <thead class="thead-dark" id="productListHead">
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Ảnh đại diện</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Thời gian khởi tạo</th>
+                                    <th scope="col">Giá Sp</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Danh mục sản phẩm</th>
+                                    <th scope="col">Người đăng</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productListBody">
+                                <tr th:each="product : ${listProduct}">
+                                    <td th:text="${product.getId()}"></td>
+                                    <td>
+                                        <img width="100" height="66"
+                                            th:src="'data:image/png;base64,' + ${product.getProductImage()}" alt="">
+                                    </td>
+                                    <td th:text="${product.getProductName()}"></td>
+                                    <td th:text="${product.getCreateAt()}"></td>
+                                    <td th:text="${#numbers.formatDecimal(product.getProductPrice(), 0, 'COMMA', 0, 'COMMA')} + ' VND'"></td>
+                                    <td th:text="${product.getStatus()}"></td>
+                                    <td th:text="${product.getCategoryName()}"></td>
+                                    <td th:text="${product.getUserName()}"></td>
+                                    <td>
+                                        <a href="#" class="productViewLink" th:data-id="${product.getId()}">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"
+                                                title="Sửa sản phẩm"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/web/js/admin/products/product.js}"></script>
+</div>
