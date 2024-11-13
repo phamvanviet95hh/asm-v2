@@ -21,13 +21,25 @@ function clearInfo() {
     window.location.href = `${localdomain}/admin/login`;
 }
 
-function alertGloable(message) {
-    $('#myAlert').fadeIn();
-    $("#contentAlert").html(message);
-    $(".alert-success").addClass("opa");
+
+function alertGloable(message, type) {
+    if (type === "success") {
+        $(".alert-success").addClass("opa");
+        $('#myAlert').fadeIn();
+        $("#contentAlert").html(message);
+    } else if (type === "false") {
+        $('#myAlertError').fadeIn();
+        $("#contentAlertError").html(message);
+        $(".alert-danger").addClass("opa");
+    }
     setTimeout(function () {
-        $('#myAlert').fadeOut();
-        $(".alert-success").removeClass("opa");
+        if (type === "success") {
+            $('#myAlert').fadeOut();
+            $(".alert-success").removeClass("opa");
+        } else if (type === "false") {
+            $('#myAlertError').fadeOut();
+            $(".alert-danger").removeClass("opa");
+        }
     }, 3000);
 }
 

@@ -1,0 +1,92 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center p-2">
+                        <div class="info-topLeft">
+                            <a href="#" id="info-topLeft-prev" th:data-id="${userUntity.getId()}">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </a>
+                            <label>
+                                <b>Trở lại</b>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+
+                    <div class="modal-content" style="width: 100%">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa tài khoản</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-3 border border-1">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="register-user">
+                                        <p class="mb-0"><b>Ảnh đại diện</b></p>
+                                        <div class="box-logo">
+                                            <div class="box-logo-img">
+                                                <div class="content-productCategoryImg-box d-flex flex-column align-items-center justify-content-center">
+                                                    <div class="image-preview d-flex flex-column align-items-center justify-content-center"
+                                                         id="imagePreview">
+                                                            <span id="content-productCategoryImg-span">
+                                                                <img th:src="'data:image/png;base64,' + ${userUntity.getAvatar()}" alt="">
+                                                            </span>
+                                                    </div>
+                                                    <div class="box_btn-uploadImg">
+                                                        <input type="file" id="imageInput" accept="image/*" name="file">
+                                                        <button type="button" class="btn btn-info btn-selectImg">Chọn ảnh sản
+                                                            phẩm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-8">
+                                    <div class="register-user">
+                                        <p class="mb-0"><b>Thông tin đơn vị: </b></p>
+                                        <div  class="register-user-content mb-2">
+                                            <p class="mb-0">Tên đăng nhập:</p>
+                                            <input type="text" placeholder="username..." th:value="${userUntity.getUserName()}" name="username" id="username" th:disabled="${userUntity.getUserName() != null or !#strings.isEmpty(userUntity.getUserName())}"/>
+                                            <p class="mb-0" style="color: red; font-size: 12px; font-style: italic;" id="errorUsername"></p>
+                                        </div>
+                                        <div class="register-user-content mb-2">
+                                            <p class="mb-0">Tên tài khoản:</p>
+                                            <input type="text" placeholder="Tên đơn vị..." th:value="${userUntity.getFullName()}" name="partnerNameRegister" id="partnerNameRegister" />
+                                        </div>
+                                        <div class="register-user-content mb-2">
+                                            <p class="mb-0">Email:</p>
+                                            <input type="email" placeholder="Email..." th:value="${userUntity.getEmail()}" name="email" id="email" />
+                                        </div>
+                                        <div class="register-user-content mb-2">
+                                            <p class="mb-0">Số điện thoại :</p>
+                                            <input type="text" placeholder="Số điện thoại..." th:value="${userUntity.getPhone()}" name="phoneRegister" id="phoneRegister" maxlength="10" />
+                                        </div>
+                                        <div class="register-user-content mb-2">
+                                            <p class="mb-0">Địa chỉ :</p>
+                                            <input type="text" placeholder="Địa chỉ ..." th:value="${userUntity.getAddress()}" name="addressRegister" id="addressRegister" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning btn-addPartnerBack" data-bs-dismiss="modal" th:data-id="${userUntity.getId()}">Trở lại</button>
+                            <button type="button" class="btn btn-primary btn-updatePartnerRegister" th:data-id="${userUntity.getId()}">Sửa thông tin</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/web/js/admin/infors/editUser.js}"></script>

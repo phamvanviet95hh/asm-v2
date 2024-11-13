@@ -35,6 +35,8 @@ public class UserUntity {
     private String phone;
     private String detail;
     private String status;
+
+    @Column(columnDefinition = "TEXT")
     private String avatar;
     private String role;
     private LocalDateTime createAt;

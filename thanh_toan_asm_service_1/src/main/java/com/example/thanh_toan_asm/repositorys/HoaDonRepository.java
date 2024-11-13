@@ -64,4 +64,11 @@ public interface HoaDonRepository extends JpaRepository<HoaDon, Long> {
     @Transactional
     @Query("delete from HoaDon h where h.id = :idDd")
     void customDeleteHd(Long idDd);
+
+
+    @Query("select sum(CAST(hd.totalPrice AS long)) from HoaDon hd where hd.status='2' and hd.createAt between :startOfMonth and :endOfMonth")
+    Long customCountDtMonth(LocalDateTime startOfMonth, LocalDateTime endOfMonth);
+
+    @Query("select sum(CAST(hd.totalPrice AS long)) from HoaDon hd where hd.status='2' and hd.createAt between :startOfMonth and :endOfMonth")
+    Long customCountDtDay(LocalDateTime startOfMonth, LocalDateTime endOfMonth);
 }

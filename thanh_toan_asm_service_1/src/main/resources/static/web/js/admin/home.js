@@ -29,7 +29,7 @@ $(document).ready(function () {
         });
     });
     if(role === "ADMIN"){
-    
+        $("#content_box").load(`/admin/thongKeAdmin`);
     }else if(role === "PARTNER"){
         $(".btn-backHome").addClass("an");
         $(".dashboard").addClass("an");
@@ -39,4 +39,10 @@ $(document).ready(function () {
         $(".menuListNew").addClass("an");
         $("#content_box").load(`/admin/billing?startDate=${getFirstDayOfMonth()}&endDate=${getLastDayOfMonth()}&size=${10}&page=${0}&codeHd=&statusHd=`);
     }
+    
+    $(".btn-infoAccount").click(function () {
+        $("#content_box").load(`/admin/user/inforUser?idUser=${userId}`);
+    });
+    
+    
 });

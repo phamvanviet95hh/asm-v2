@@ -157,4 +157,12 @@ public class HoaDonService {
                 success, message, null
         ), HttpStatusCode.valueOf(HttpStatus.OK.value()));
     }
+
+    public Long countDtMonth(LocalDateTime startOfMonth, LocalDateTime endOfMonth) {
+        return hoaDonRepository.customCountDtMonth(startOfMonth, endOfMonth);
+    }
+
+    public Long countDtDay(LocalDateTime startOfMonth, LocalDateTime endOfMonth) {
+        return hoaDonRepository.customCountDtDay(startOfMonth, endOfMonth);
+    }
 }

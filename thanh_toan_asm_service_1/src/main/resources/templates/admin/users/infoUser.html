@@ -1,0 +1,157 @@
+<div class="content-page">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center p-2">
+            <div class="info-topLeft">
+              <a href="#" id="info-topLeft-prev">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              </a>
+              <label>
+                <b> Trở lại</b>
+              </label>
+            </div>
+            <div class="info-topRight">
+              <button class="btn btn-success btn-editInFor" th:data-idPart="${partner.getId()}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Chỉnh sử thông tin</button>
+              <button class="btn btn-info btn-changePassword" th:data-idPart="${partner.getId()}"><i class="fa fa-key" aria-hidden="true"></i>Thay đổi mật khẩu</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item hien" role="presentation">
+              <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-item="item1"
+                      type="button" role="tab" aria-controls="home" aria-selected="true">Thông tin TK</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent" style="margin-top: 20px;">
+            <div class="item-bank item1 show" id="item1" >
+
+              <div class="row">
+                <div class="col-3">
+                  <div class="info-left d-flex align-items-center justify-content-center p-3 flex-column">
+                    <div class="info-left-avatar mb-3">
+                      <i class="fa fa-university" aria-hidden="true" th:if="${partner.getAvatar() == ''}"></i>
+                      <img class="img-logo" width="75" height="50" th:if="${partner.getAvatar() != ''}" th:src="'data:image/png;base64,' + ${partner.getAvatar()}" alt="">
+                    </div>
+                    <div class="info-left-status mb-3">
+                      <h5 id="username" class="text-center" th:text="${partner.getUserName()}"></h5>
+                      <label class="text-center" style="display: block" th:text="${partner.getRole()}"></label>
+                    </div>
+                    <div class="info-left-email w-100 overflow-hidden mb-3">
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="w-10">
+                          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="w-75 pl-2 ">
+                          <label id="label-email" th:text="${partner.getEmail()}"></label>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="w-10">
+                          <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="w-75 pl-2 ">
+                          <label id="label-phone" th:text="${partner.getPhone()}"></label>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="w-10">
+                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="w-75 pl-2 ">
+                          <label id="label-address" th:text="${partner.getAddress()}"></label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-9">
+                  <div class="info-right p-3 ">
+                    <div class="detail-top border-bottom pt-3 pb-3"><b>Thông tin tài khoản</b></div>
+                    <div class="d-flex justify-content-between border-bottom pt-3 pb-3">
+                      <div class="info-content-left w-50">
+                        <p class="mb-2">Họ và tên:</p>
+                        <b id="info-right-fullName" th:data-value="${partner.getFullName()}" data-key="partnerName" th:text="${partner.getFullName()}"></b>
+                        <!--                                                <a href="#" class="editUserInfo" data-name="Company's name" id="partnerNameInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+                      </div>
+
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pt-3 pb-3">
+                      <div class="info-content-left w-50">
+                        <p class="mb-1">Số điện thoại</p>
+                        <b id="info-right-phoneNumber" th:data-value="${partner.getPhone()}" data-key="partnerPhone" th:text="${partner.getPhone()}"></b>
+                        <!--                                                <a href="#" class="editUserInfo" data-name="Phone number" id="phoneNumberInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+                      </div>
+                      <div class="info-content-right  w-50">
+                        <p class="mb-1">Thư điện tử:</p>
+                        <b id="info-right-email" th:data-value="${partner.getEmail()}" data-key="email" th:text="${partner.getEmail()}"></b>
+                        <!--                                                <a href="#" class="editUserInfo" data-name="Email" id="emailInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+                      </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-between border-bottom pt-3 pb-3">
+                      <div class="info-content-left w-50">
+                        <p class="mb-1">Quyền:</p>
+                        <b id="info-right-rank" th:text="${partner.getRole()}"></b>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pt-3 pb-3">
+                      <div class="info-content-left w-50">
+                        <p class="mb-1">Người đại diện : </p>
+                        <b id="info-right-representative" th:data-value="${partner.getFullName()}" data-key="fullName" th:text="${partner.getFullName()}"></b>
+                        <!--                                                <a href="#" class="editUserInfo" data-name="Representative" id="taxNumberInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+                      </div>
+                      <div class="info-content-right  w-50">
+                        <p class="mb-1">Địa chỉ :</p>
+                        <b id="info-right-address" th:data-value="${partner.getAddress()}" data-key="partnerAddress" th:text="${partner.getAddress()}"></b>
+                        <!--                                                <a href="#" class="editUserInfo" data-name="Address" id="addressInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="box-changePasswordNew">
+    <div class="box-changePasswordNew-item">
+      <div class="box-icon-close">
+        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+      </div>
+      <div class="mb-3">
+        <div class="box-errorChangeParent text-center">
+          <p class="text-center" id="content-error"></p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="passwordOld">Nhập mật khẩu hiện tại: </label>
+        <input type="password" id="passwordOld" class="form-control" placeholder="Nhập mật khẩu cũ">
+      </div>
+      <div class="mb-3">
+        <label for="passwordNew">Nhập mật khẩu mới: </label>
+        <input type="password" id="passwordNew" class="form-control" placeholder="Nhập mật khẩu mớĩ">
+      </div>
+      <div class="mb-3">
+        <label for="passwordNewReq">Nhập lại mật khẩu mới: </label>
+        <input type="password" id="passwordNewReq" class="form-control" placeholder="Nhập mật lại khẩu mới">
+        <p id="errorRepass"></p>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-danger btn-exitChangePassword" th:data-value="${partner.getId()}">Thoát</button>
+        <button class="btn btn-success btn-sendChangePassword" th:data-value="${partner.getId()}">Cập nhập</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script th:src="@{/web/js/admin/infors/infoUser.js}"></script>

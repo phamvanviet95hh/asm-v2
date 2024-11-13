@@ -910,3 +910,80 @@ body {
     height: 100%;
     color: #fff;
 }
+.btn-infoAccount{
+    cursor: pointer;
+}
+#box-changePasswordNew{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333c9;
+    display: none;
+}
+
+#box-changePasswordNew.hien{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-changePasswordNew-item{
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 4px 5px 1px #b3b1b1;
+    width: 40%;
+    height: unset;
+    position: relative;
+}
+.box-errorChangeParent{
+    display: none;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: red;
+}
+.box-errorChangeParent.hien{
+    display: block;
+}
+#errorRepass{
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
+.box-icon-close {
+
+    position: absolute;
+    top: -13px;
+    right: -7px;
+;
+
+}
+
+.box-icon-close i.fa-times-circle-o {
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+}
+.content-thongKeDay,
+.content-thongKeMonth{
+    background-color: #fff;
+    border-radius: 10px;
+}
+.content_box-thongke-box{
+    border-right: 1px dotted #fff;
+}
+
+.content_box-thongke{
+    background-color: rgba(0, 175, 242, 0.71);
+}
+.content-thongKe-number{
+    font-size: 30px;
+    font-weight: bold;
+}
+.content-thongKe-title{
+    font-size: 15px;
+    font-weight: bold;
+}

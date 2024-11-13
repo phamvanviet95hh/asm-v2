@@ -1,0 +1,28 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="content_box-thongke">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center p-5 content_box-thongke-box">
+                            <div class="content-thongKeMonth p-3">
+                                <p class="content-thongKe-title">Doanh thu theo tháng:</p>
+                                <span class="content-thongKe-number" th:text="${#numbers.formatDecimal(dtMonth, 0, 'COMMA', 0, 'COMMA')} + ' VND' "></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center p-5 content_box-thongke-box">
+                            <div class="content-thongKeDay p-3">
+                                <p class="content-thongKe-title">Doanh thu theo ngày:</p>
+                                <span class="content-thongKe-number" th:text="${#numbers.formatDecimal(dtDay, 0, 'COMMA', 0, 'COMMA')} + ' VND' "></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

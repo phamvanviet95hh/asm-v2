@@ -18,7 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +47,20 @@ public class AdminWebController {
     @GetMapping("dashboard")
     public String dashboardLogin(Model model) {
         return "admin/dashboard/dashboard";
+    }
+
+    @GetMapping("thongKeAdmin")
+    public String thongKeAdmin(Model model) {
+        LocalDate date = LocalDate.now();
+        LocalDateTime startOfMonth = YearMonth.now().atDay(1).atStartOfDay();
+        LocalDateTime endOfMonth = YearMonth.now().atEndOfMonth().atTime(LocalTime.MAX);
+        LocalDateTime startOfDay = date.atStartOfDay();
+        LocalDateTime endOfDay = date.atTime(LocalTime.MAX);
+        Long dtMonth = hoaDonService.countDtMonth(startOfMonth, endOfMonth) != null ? hoaDonService.countDtMonth(startOfMonth, endOfMonth) : 0L;
+        Long dtDay = hoaDonService.countDtDay(startOfDay, endOfDay) != null ? hoaDonService.countDtDay(startOfDay, endOfDay) : 0L;
+        model.addAttribute("dtMonth", dtMonth);
+        model.addAttribute("dtDay", dtDay);
+        return "admin/dashboard/thongKeAdmin/thongKe";
     }
 
     @GetMapping("addCategoryProduct")
